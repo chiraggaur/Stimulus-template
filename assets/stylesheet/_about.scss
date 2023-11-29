@@ -1,0 +1,76 @@
+.about{
+  display: grid;
+  grid-template-columns: auto;
+  h2{
+    @extend %heading;
+  }
+  .about-left{
+    display: grid;
+    grid-template-columns: auto;
+    p{
+      @extend %p;
+    }
+    gap: 1rem;
+  }
+  small{
+    @extend %small;
+    color: $yellow;
+    text-transform: uppercase;
+  }
+  .about-left, .about-right article:nth-child(2){
+    padding: 2rem 1.5rem;
+  }
+  .about-right{
+    display: grid;
+    grid-template-columns: auto;
+  }
+  .skills{
+    display: grid;
+    gap: 1rem;
+    background-color: $yellow;
+    small{
+      color: $white;
+    }
+  }
+  .progress-container{
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: auto;
+    .skill-header{
+      display: grid;
+      margin-top: 1rem;
+      h6{
+        border-bottom: 3px solid $dark-grey;
+        
+        color: $dark-grey;
+        font-weight: 700;
+      }
+      p{
+        border-bottom: 3px solid $white;
+        color: $white;
+        text-align: end;
+      }
+      h6,p{
+        padding-bottom: 0.8rem;
+      }
+    }
+    div:nth-child(1){
+      grid-template-columns: 90% 10%;
+    }
+    div:nth-child(2){
+      grid-template-columns: 70% 30%;
+    }
+    div:nth-child(3){
+      grid-template-columns: 80% 20%;
+    }
+  }
+}
+
+@media (min-width: 768px){
+  .about{
+    grid-template-columns: 1fr 1fr;
+    .about-right{
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+}
